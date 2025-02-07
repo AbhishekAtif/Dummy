@@ -19,12 +19,87 @@
         function redirectToLink() {
             window.location.href = 'https://black-beach-009ddb20f.4.azurestaticapps.net/';
         }
+        function getCookieValue(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+
+        function assignCookieValueToDiv() {
+            const cookieValue = getCookieValue('testcookie');
+            if (cookieValue) {
+                document.getElementById('cookieData').innerText = cookieValue;
+            } else {
+                document.getElementById('cookieData').innerText = 'Cookie not found';
+            }
+        }
+
+        function assignCookieValueToDiv() {
+            const cookieValue = getCookieValue('testcookie_empty');
+            if (cookieValue) {
+                document.getElementById('testcookie_empty').innerText = cookieValue;
+            } else {
+                document.getElementById('testcookie_empty').innerText = 'Cookie not found';
+            }
+        }
+
+        function assignCookieValueToDiv() {
+            const cookieValue = getCookieValue('__Secure-testcookiesecure');
+            if (cookieValue) {
+                document.getElementById('__Secure_testcookiesecure').innerText = cookieValue;
+            } else {
+                document.getElementById('__Secure_testcookiesecure').innerText = 'Cookie not found';
+            }
+        }
+
+        function assignCookieValueToDiv() {
+            const cookieValue = getCookieValue('__Secure-testcookiesecure1');
+            if (cookieValue) {
+                document.getElementById('__Secure_testcookiesecure1').innerText = cookieValue;
+            } else {
+                document.getElementById('__Secure_testcookiesecure1').innerText = 'Cookie not found';
+            }
+        }
+
+        function assignCookieValueToDiv() {
+            const cookieValue = getCookieValue('__Host-testcookiehost');
+            if (cookieValue) {
+                document.getElementById('__Host_testcookiehost').innerText = cookieValue;
+            } else {
+                document.getElementById('__Host_testcookiehost').innerText = 'Cookie not found';
+            }
+        }
+
+        function assignCookieValueToDiv() {
+            const cookieValue = getCookieValue('__Host-testcookiehost1');
+            if (cookieValue) {
+                document.getElementById('__Host_testcookiehost1').innerText = cookieValue;
+            } else {
+                document.getElementById('__Host_testcookiehost1').innerText = 'Cookie not found';
+            }
+        }
+
+        window.onload = assignCookieValueToDiv;
+
     </script>
 </head>
 <body>
     <h1>Simple HTML App</h1>
     <button onclick="fetchData()">Fetch Data</button>
     <pre id="apiData"></pre>
+    <pre id="">cookieData</pre>
+    <pre id="cookieData"></pre>
+    <pre id="">testcookie_empty</pre>
+    <pre id="testcookie_empty"></pre>
+    <pre id="">__Secure_testcookiesecure</pre>
+    <pre id="__Secure_testcookiesecure"></pre>
+    <pre id="">__Secure_testcookiesecure1</pre>
+    <pre id="__Secure_testcookiesecure1"></pre>
+    <pre id="">__Host_testcookiehost</pre>
+    <pre id="__Host_testcookiehost"></pre>
+    <pre id="">__Host_testcookiehost1</pre>
+    <pre id="__Host_testcookiehost1"></pre>
     <button onclick="redirectToLink()">Go to Example</button>
     <button onclick="history.back()">Go Back</button>
 </body>

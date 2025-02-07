@@ -7,7 +7,7 @@
     <script>
         async function fetchData() {
             try {
-                const response = await fetch('https://api.example.com/data');
+                const response = await fetch('https://dummywebappsite-dqbvhxb6cfd9bfa6.centralus-01.azurewebsites.net/WeatherForecast');
                 const data = await response.json();
                 console.log(data);
                 document.getElementById('apiData').innerText = JSON.stringify(data, null, 2);
